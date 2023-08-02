@@ -6,13 +6,14 @@ spec:
   replicas: 3
   selector:
     matchLabels:
-      app: ""
+      app: agnhost
   template:
     metadata:
       labels:
-        app: ""
+        app: agnhost
     spec:
       containers:
       - name: agnhost-container
         image: registry.k8s.io/e2e-test-images/agnhost:2.38
-        ports: []
+        ports:
+        - containerPort: 80
