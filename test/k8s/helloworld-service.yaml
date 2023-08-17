@@ -1,12 +1,17 @@
-apiVersion: v1
-kind: Service
+apiVersion: apps/v1
+kind: Deployment
 metadata:
-  name: php-app-service
+  name: hello-world-deployment
 spec:
+  replicas: 1
   selector:
-    app: php-app
-  ports:
-    - protocol: TCP
-      port: 80
-      targetPort: 80
-  type: NodePort
+    matchLabels:
+      app: hello-world
+  template:
+    metadata:
+      labels:
+        app: hello-world
+    spec:
+      containers:
+        - name: hello-world-container
+          image: httpd:latest
