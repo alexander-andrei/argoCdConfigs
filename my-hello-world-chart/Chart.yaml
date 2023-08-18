@@ -1,4 +1,0 @@
-apiVersion: v2
-name: my-hello-world-chart
-description: A Helm chart for deploying the Hello, World! application
-version: 0.1.0
